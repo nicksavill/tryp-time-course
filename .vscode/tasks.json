@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: gcc build active file",
+			"command": "/usr/bin/gcc",
+			"args": [
+				// "-Og",
+				"-O2",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-Wl,--no-as-needed",
+				"-Wno-unused-result",
+				"-lmkl_intel_ilp64",
+				"-lmkl_gnu_thread",
+				"-lmkl_core",
+				"-lgomp",
+				"-lpthread",
+				"-lm",
+				"-ldl"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/gcc"
+		}
+	]
+}
